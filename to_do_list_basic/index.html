@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Create an unordered list. Allow users to add and remove list items dynamically using buttons.
+    <h1>To-Do List</h1>
+    <ul> </ul>
+    <input type="text" id="EnterItem">
+    <button id="add">Add Element</button>
+    <button id="remove">Remove Element</button>
+    <script>
+        var addItem = document.querySelector('#add');
+        var removeItem = document.querySelector('#remove');
+        var ul = document.querySelector('ul');
+        var li = document.createElement('li');
+
+        addItem.addEventListener('click', function (evt) {
+            evt.preventDefault();
+            var Item = document.querySelector('input');
+            var li = document.createElement('li');
+            li.textContent = Item.value;
+            ul.appendChild(li);
+
+        })
+
+        removeItem.addEventListener('click', function (evt) {
+            evt.preventDefault();
+            var li = ul.lastElementChild;
+            ul.removeChild(li);
+
+        })
+    </script>
+</body>
+
+</html>

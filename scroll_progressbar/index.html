@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .progressContainer {
+        border: 1px solid rgb(31, 174, 69);
+        position: fixed;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: bisque;
+        width: 90%;
+        height: 25px;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    p {
+        position: absolute;
+        font-size: 40px;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 25px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .progress {
+        transition: all cubic-bezier(0.19, 1, 0.22, 1);
+        width: 2%;
+        height: 100%;
+        background-color: rgb(215, 45, 178);
+        /* border-radius: 20px; */
+
+    }
+</style>
+
+<body>
+    Show a progress bar which shows how much page has been scrolled.
+    <div class="progressContainer">
+        <div class="progress" id="progress"></div>
+    </div>
+    <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magni voluptates nemo!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consequuntur ex quisquam? Quasi molestiae debitis
+        minus quos ab ullam quisquam. Quaerat, deleniti ab molestias amet, est eaque ipsum consequuntur enim vitae
+        accusantium rem ducimus. Hic maiores cs! Doloribus repudiandae incidunt ullam beatae nisi, sunt dolore omnis
+        distinct fugit! Neque expedita rem sed mollitia eos ullam eaque natus quidem amet quas aut fugiat consequatur
+        quibusdam libero cupiditate, voluptatum nam, aperiam suscipit est porro hic possimus ut. Ullam autem ipsam ut!
+    </p>
+    <script>
+        function progressBarScroll() {
+            var windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (windowScroll / height) * 100;
+            document.getElementById('progress').style.width = scrolled + "%";
+
+        }
+
+        window.addEventListener('scroll', function () {
+            progressBarScroll();
+        })
+
+        progressBarScroll();
+    </script>
+</body>
+
+</html>

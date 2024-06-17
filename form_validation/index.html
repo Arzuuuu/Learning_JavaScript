@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    create a form with input fields and a submit button. Use JavaScript to validate the form and display an error
+    message if the input is invalid.
+    <form action="">
+        <h3></h3>
+        <label for="name">Enter Name:
+            <input type="text" id="name">
+        </label>
+        <br>
+        <label for="phone">Enter Phone Number:
+            <input type="text" id="phone">
+        </label>
+        <br>
+        <input type="submit">
+
+    </form>
+    <p>clicking on a link navigates to a new page, or submitting a form sends data to the server and reloads the page.
+
+        However, sometimes you may want to override this default behavior and perform some custom action instead. In
+        such cases, you can use the preventDefault() method to stop the default action associated with the event.
+
+        when the form is submitted, the default action (which would typically involve sending data to the server and
+        reloading the page) is prevented by calling event.preventDefault(). This allows you to handle the form
+        submission entirely with custom JavaScript code without causing a page reload.
+    </p>
+    <script>
+        // 3.
+        var form = document.querySelector("form");
+        // var inputs = document.querySelectorAll("input");
+        var inputs = document.querySelectorAll("input[type='text']");
+        var h3 = document.querySelector('h3');
+
+        form.addEventListener('submit', function (evt) {
+            evt.preventDefault();
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value.trim() === '') {
+                    h3.textContent = 'err';
+                    h3.style.color = 'red';
+                    break;
+                }
+                else {
+                    h3.textContent = '';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    create a page with two images and a button. When the button is clicked, swap the source attributes of the two images.
+    <img src="https://i.pinimg.com/736x/9b/ad/71/9bad716ac25c7162edbe9681ff19ad2a.jpg" alt="img1" id="img1">
+    <img src="https://i.pinimg.com/564x/c1/0b/f1/c10bf1ca73401f48bfd0d04b90d4f2aa.jpg" alt="img2" id="img2">
+    <button>swap images</button>
+
+    <script>
+        var btn = document.querySelector('button');
+        var img1 = document.querySelector('#img1');
+        var img2 = document.querySelector('#img2');
+
+        btn.addEventListener('click', function () {
+            var temp = img1.src;
+            img1.src = img2.src;
+            img2.src = temp;
+        });
+    </script>
+</body>
+
+</html>

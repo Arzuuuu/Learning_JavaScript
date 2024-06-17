@@ -1,0 +1,142 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    #21d4fd,
+    #b721ff,
+    rgb(235, 117, 136),
+    #2b7ada
+  );
+  animation: color 5s ease-in-out infinite;
+  background-size: 300%;
+}
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+}
+
+.timer {
+  text-align: center;
+}
+
+.countdown {
+  font-size: 3rem;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.countdown h3 span {
+  /* border: 2px solid white; */
+  border-radius: 30px;
+  padding: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background: linear-gradient(-45deg, pink, blue);
+}
+
+.input {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.actionbuttons {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.input label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  margin: 15px;
+  padding: 20px;
+  border-radius: 23px;
+  border: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+#start:hover {
+  background-color: #20c426;
+  color: white;
+}
+
+#stop:hover {
+  background-color: rgb(232, 45, 45);
+  color: white;
+}
+
+#start {
+  color: rgb(15, 78, 15);
+}
+
+#reset:hover {
+  background-color: black;
+  color: white;
+}
+
+#stop {
+  color: red;
+}
+
+#start,
+#stop span {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  #countdown {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #countdown {
+    font-size: 1.5rem;
+  }
+}
+
+
+input{
+  border-radius: 20px;
+  border:none;
+  padding:3px 4px;
+
+}
